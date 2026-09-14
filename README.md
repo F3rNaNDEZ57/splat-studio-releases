@@ -10,6 +10,8 @@ where a human has to look at the result and decide.
 
 **[⬇ Download the latest release](../../releases/latest)**
 
+**[📖 How to use it](GUIDE.md)** — filming advice, what each stage does, and the two points where it asks you a question.
+
 > ### Research and evaluation use only
 >
 > Splat Studio bundles [2D Gaussian Splatting](https://github.com/hbb1/2d-gaussian-splatting)
