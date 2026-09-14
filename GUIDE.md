@@ -78,8 +78,7 @@ Two things on this screen are worth reading rather than clicking past:
 - **The clip list.** Two files with the same name from different folders
   cannot both be used, because the config records them by name.
 
-> **Screenshot to add:** the Create Project dialog with clips selected and the
-> resolution readout visible. `docs/images/02-create-project.png`
+![The Create project dialog: a name field, a button to choose video clips, and a button to choose where the project folder goes](docs/images/02-create-project.png)
 
 ---
 
@@ -96,8 +95,8 @@ from, so re-running skips anything already finished and still valid —
 `already complete, skipping (resumability)`. If you change a setting that
 matters, the stages downstream of it re-run and the ones upstream do not.
 
-> **Screenshot to add:** a run in progress, ideally mid-Train with the
-> progress bar and a preview image. `docs/images/03-running.png`
+The stage rail on the left tracks all five at once, so you can see at a glance
+where the run is and what it has already done.
 
 ---
 
@@ -113,7 +112,8 @@ registered-image count and asked to pick. **Usually the one with the most
 images is right** — it is preselected — but not always: a model built from 30
 images of one side of the object is worse than it looks.
 
-> **Screenshot to add:** the submodel choice screen. `docs/images/04-submodel.png`
+This one only appears when there is genuinely more than one candidate, so many
+projects never see it.
 
 ### Whether the isolated object is your object
 
@@ -143,9 +143,21 @@ seconds. **Confirm** moves on to Export. And confirming is not final —
 **Re-tune the isolation** on the Export screen brings this back without
 recomputing anything.
 
-> **Screenshot to add:** the isolation screen with the crop panels and 3D
-> view. This is the most useful screenshot in the guide.
-> `docs/images/05-isolate.png`
+![The isolation screen: 22,333 Gaussians kept with its bounding box, and three flat panels showing the object in green inside a yellow crop box, with the rest of the room in grey](docs/images/03-isolate.png)
+
+Green is what the cascade kept. Grey is the rest of the scene, drawn so you can
+see what you are trimming away. The yellow rectangle is the crop box — drag it
+on any panel and the other two follow.
+
+Scroll down on that screen and the same scene appears in 3D, with the crop box
+drawn as a wireframe around it:
+
+![The 3D view: the room as grey points, the isolated figure in green, and the crop box drawn as a yellow wireframe box around it in perspective](docs/images/04-3d-view.png)
+
+Below that are the cascade values themselves, and the two buttons that end the
+decision:
+
+![The cascade tuning row: opacity threshold, denoise k, denoise std ratio, DBSCAN eps and min points, pre-DBSCAN and colour filter, with Re-run and Confirm buttons](docs/images/05-tuning.png)
 
 ---
 
@@ -160,8 +172,11 @@ desktop splat viewers.
 Files from earlier runs are listed too, so a project you finished last week
 is still one click from a copy.
 
-> **Screenshot to add:** the deliverables panel with a saved `.ply`.
-> `docs/images/06-export.png`
+![The Export stage listing two deliverables, each with a Save a copy button, and a Re-tune the isolation control below them](docs/images/06-export.png)
+
+Note the **Re-tune the isolation** control underneath. Confirming is not a
+one-way door — that button brings the isolation screen back, and nothing is
+recomputed when it does.
 
 ---
 
